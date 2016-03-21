@@ -1,0 +1,44 @@
+{
+  "name": "ckeditor-mediabox",
+  "version": "0.0.1",
+  "description": "Wrap your media up with a title, caption, credit, tweet and facebook text.",
+  "main": "plugin.js",
+  "scripts": {
+    "test": "xo"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/radiovisual/ckeditor-mediabox.git"
+  },
+  "keywords": [
+    "ckeditor",
+    "contextMenu",
+    "context",
+    "menu",
+    "plugin",
+    "media",
+    "wrapper",
+    "header",
+    "div",
+    "html",
+    "wrap",
+    "widget",
+    "insulate",
+    "insulating",
+    "tweet",
+    "facebook"
+  ],
+  "author": {
+    "name": "Michael Wuergler",
+    "email": "senjudev@gmail.com",
+    "url": "http://numetriclabs.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/radiovisual/ckeditor-mediabox/issues"
+  },
+  "homepage": "https://github.com/radiovisual/ckeditor-mediabox#readme",
+  "devDependencies": {
+    "xo": "^0.13.0"
+  }
+}

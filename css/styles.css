@@ -1,0 +1,53 @@
+.media_widget {
+    padding: 8px;
+    margin: 20px;
+    background: #ccc;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 1px #fff inset, 0 -1px 0 #ccc inset;
+}
+.media_widget h4 {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.media_embed {
+    padding: 10px;
+    background-image: url('stripe.png');
+}
+
+.widgeticon {
+    display: none;
+}
+
+.socialbtns a:link, .socialbtns a:visited {
+    color: #0fb9ff;
+    text-decoration: none;
+}
+
+.caption_credit .caption,
+.caption_credit .credit,
+.socialbtns .facebook-text,
+.socialbtns .tweet-text,
+.media_widget h4 {
+    display: block;
+    box-shadow: 0 1px 1px #ddd inset;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    background: #fff;
+    padding: 2px;
+}
+
+.caption_credit .caption:before,
+.caption_credit .credit:before,
+.socialbtns .facebook-text:before,
+.socialbtns .tweet-text:before,
+.media_widget h4:before {
+    font-weight: normal;
+    color: #a5a5a5;
+}
+.caption_credit .caption:before { content: 'Caption: ' }
+.caption_credit .credit:before { content: 'Credit: ' }
+.socialbtns .facebook-text:before { content: 'Facebook: ' }
+.socialbtns .tweet-text:before { content: 'Tweet: ' }
+.media_widget h4:before { content: 'Media Header: ' }
