@@ -1,4 +1,14 @@
-CKEDITOR.dialog.add( 'mediabox', function( editor ) {
+CKEDITOR.dialog.add('mediabox', function (editor) {
+
+	function stripCKEditorData(value) {
+		if (value) {
+			var element = CKEDITOR.dom.element.createFromHtml(value);
+			element.removeAttribute('data-cke-saved-src');
+			return element.getOuterHtml();
+		}
+		return null;
+	}
+
 	return {
 		title: 'Edit Media Box',
 		minWidth: 400,
@@ -14,6 +24,7 @@ CKEDITOR.dialog.add( 'mediabox', function( editor ) {
 						label: 'Title',
 						validate: CKEDITOR.dialog.validate.notEmpty('Title cannot be empty. Use the youtube plugin if you just want to embed a video without sharing/caption/title, etc'),
 						setup: function( widget ) {
+							console.log('in title:', widget.data);
 							this.setValue( widget.data.title );
 						},
 						commit: function( widget ) {
@@ -26,10 +37,11 @@ CKEDITOR.dialog.add( 'mediabox', function( editor ) {
 						label: 'Markup (Embed or Image tag)',
 
 						setup: function( widget ) {
-							this.setValue( widget.data.markup );
+							var markup = stripCKEditorData(widget.data.markup);
+							this.setValue(markup);
 						},
 						commit: function( widget ) {
-							widget.setData( 'markup', this.getValue() || '<iframe width="560" height="315" src="https://www.youtube.com/embed/Eq8kKeMFfC0" frameborder="0" allowfullscreen></iframe>' );
+							widget.setData('markup', this.getValue() || '<iframe width="560" height="315" src="https://www.youtube.com/embed/Eq8kKeMFfC0" frameborder="0" allowfullscreen></iframe>');
 						}
 					},
 					{

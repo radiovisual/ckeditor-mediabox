@@ -2,9 +2,9 @@
 
 > Wrap your media up with a title, caption, credit, tweet and facebook text.
 
-This plugin works as a simple embed plugin, with a twist: it wraps all iframe embeds with a div tag. This means that even
-iframes that hijack the right-click (I'm looking at you, youtube) can have ckeditor contextMenus attached to them.
-
+This CKEditor widget works as a simple embed plugin, but allows you to attach specific metadata to the media in a way that
+is easily editable in the CKEditor editing pane.
+ 
 ## Installation
 
 **Step 1:** Copy the mediabox plugin files to your CKEditor's plugin folder:
@@ -33,15 +33,17 @@ Once installed, you can use the new Mediabox button in the Insert toolbar
 
 ![toolbar screenshot](media/screenshot-toolbar.png)
 
-This will allow you to embed an iframe, as well as set the title, caption, tweet text and facebook text. 
+This will allow you to embed an iframe, as well as set the title, caption, tweet text and facebook text directly in the editor.
+Here is a preview of what the widget looks like in the editor.
+ 
+![toolbar screenshot](media/screenshot-widget.png)
 
-## Context Menu
+Double-clicking on the widget will enable you to conveniently edit the contents through a form.
+ 
+![toolbar screenshot](media/screenshot-menu.png)
 
-If you have an image in the editor, right click on it and select `Convert to Mediabox`. This will upgrade your image into a
-Mediabox widget. 
-
-![screenshot](media/screenshot-context.png)
-
+**Note:** The styles you see in the editor are only applied in the editor. The HTML output is not styled. 
+           
 ## Output
 
 This plugin wraps your media embeds with a very specific markup:

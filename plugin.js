@@ -1,6 +1,3 @@
-//CKEDITOR.config.extraAllowedContent = '*(fa-facebook,tweet-text,facebook-text,tweet-text,fancyboxlaunch,fancybox.iframe,fa,fa-arrows-alt,social-btn,sb-closed,fa-external-link-square)';
-
-
 CKEDITOR.plugins.add('mediabox', {
 	requires: 'widget',
 	icons: 'mediabox',
@@ -12,7 +9,7 @@ CKEDITOR.plugins.add('mediabox', {
 			},
 			markup: {
 				selector: '.media_embed',
-					allowedContent: 'iframe{*}[*]'
+					allowedContent: 'iframe{*}[*]; img[*]{*}'
 			},
 			caption: {
 				selector: 'span.caption'
@@ -35,13 +32,10 @@ CKEDITOR.plugins.add('mediabox', {
 		editor.addContentsCss(this.path + 'css/styles.css');
 
 		editor.widgets.add('mediabox', {
-
 			dialog: 'mediabox',
-
 			button: 'Create a Media Box',
 
-			template:
-			'<div class="media_widget" data-type="video">' +
+			template: '<div class="media_widget" data-type="video">' +
 			'  <h4 class="widget_h4_header">Media Header Goes Here</h4>' +
 			'  <div class="media_embed"><iframe width="100%" height="450px" src="https://www.youtube.com/embed/CdtrfXK7bcg" frameborder="0" allowfullscreen></iframe></div>' +
 			'	<div class="widgeticon">' +
@@ -57,25 +51,25 @@ CKEDITOR.plugins.add('mediabox', {
 
 			editables: _editables,
 
-			allowedContent:
-				'div{*}(*);' +
-				'a{*}(*); i{*}[*]' +
-				'a[!fullIcon,!shareIcon]{*}' +
-				'div(!media_widget);' +
-				'h4(!widget_h4_header);' +
-				'div(!media_embed);' +
-				'div(!widgeticon);' +
-				'div(!caption_credit);' +
-				'div(!socialbtns);' +
-				'span[*]{*}; iframe[!src,frameborder,allowfullscreen];' +
-				'img[*]',
+			allowedContent: 'div{*}(*);' +
+			'a{*}(*); i{*}[*]' +
+			'a[!fullIcon,!shareIcon]{*}' +
+			'div(!media_widget);' +
+			'h4(!widget_h4_header);' +
+			'div(!media_embed);' +
+			'div(!widgeticon);' +
+			'div(!caption_credit);' +
+			'div(!socialbtns);' +
+			'span[*]{*}; iframe[!src,frameborder,allowfullscreen];' +
+			'img[*]{*}',
 
-			disallowedContent: 'iframe[width,height]',
+			disallowedContent: 'iframe[width,height];',
 
-			requiredContent: 'h4(!widget_h4_header); div(!media_widget)',
+			requiredContent: 'div(!media_widget)',
 
 			// convert pasted/generated markup into this widget
-			upcast: function( element ) {
+			// like the output from: github.com/radiovisual/ckeditor-mediaboxconvert
+			upcast: function (element) {
 				return element.name === 'div' && element.hasClass('media_widget');
 			},
 
@@ -107,33 +101,5 @@ CKEDITOR.plugins.add('mediabox', {
 				this.parts.facebook.setHtml(widget.data.facebook);
 			}
 		});
-
-			// load the context menu
-			if (editor.contextMenu) {
-				editor.addMenuGroup('mediaboxGroup');
-				editor.addMenuItem('mediaboxItem', {
-					label: 'Convert to Mediabox',
-					icon: this.path + 'icons/mediabox.png',
-					command: 'mediabox',
-					group: 'mediaboxGroup'
-			});
-
-			// add an event listener function that will be called whenever the context menu is fired.
-			editor.contextMenu.addListener(function (element) {
-				var img = element.getAscendant('img', true);
-				if (img) {
-					var markup = img.getOuterHtml();
-
-					editor.execCommand('mediabox', {
-						startupData: {
-							markup: markup
-						}
-					});
-					return {mediaboxItem: CKEDITOR.TRISTATE_OFF};
-				}
-				return false;
-			});
-
-		}
 	}
 });
