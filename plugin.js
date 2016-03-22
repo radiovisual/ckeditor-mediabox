@@ -1,15 +1,16 @@
+/* eslint-disable no-undef */
+
 CKEDITOR.plugins.add('mediabox', {
 	requires: 'widget',
 	icons: 'mediabox',
 	init: function (editor) {
-
 		var _editables = {
 			title: {
 				selector: '.widget_h4_header'
 			},
 			markup: {
 				selector: '.media_embed',
-					allowedContent: 'iframe{*}[*]; img[*]{*}'
+				allowedContent: 'iframe{*}[*]; img[*]{*}'
 			},
 			caption: {
 				selector: 'span.caption'
@@ -19,11 +20,11 @@ CKEDITOR.plugins.add('mediabox', {
 			},
 			tweet: {
 				selector: 'span.tweet-text',
-					allowedContent: 'a{*}[*]'
+				allowedContent: 'a{*}[*]'
 			},
 			facebook: {
 				selector: 'span.facebook-text',
-					allowedContent: 'a{*}[*]'
+				allowedContent: 'a{*}[*]'
 			}
 		};
 
