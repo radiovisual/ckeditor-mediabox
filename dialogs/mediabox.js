@@ -23,7 +23,7 @@ CKEDITOR.dialog.add('mediabox', function () {
 						id: 'title',
 						type: 'text',
 						label: 'Title',
-						validate: CKEDITOR.dialog.validate.notEmpty('Title cannot be empty. Use the youtube plugin if you just want to embed a video without sharing/caption/title, etc'),
+						validate: CKEDITOR.dialog.validate.notEmpty('Title cannot be empty. Use the embed plugin if you just want to embed a video without sharing/caption/title, etc'),
 						setup: function (widget) {
 							console.log('in title:', widget.data);
 							this.setValue(widget.data.title);

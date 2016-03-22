@@ -38,15 +38,15 @@ CKEDITOR.plugins.add('mediabox', {
 
 			template: '<div class="media_widget" data-type="video">' +
 			'  <h4 class="widget_h4_header">Media Header Goes Here</h4>' +
-			'  <div class="media_embed"><iframe width="100%" height="450px" src="https://www.youtube.com/embed/CdtrfXK7bcg" frameborder="0" allowfullscreen></iframe></div>' +
+			'  <div class="media_embed"><iframe width="100%" height="450px" src="https://www.youtube.com/embed/U0Z56kWNVfs" frameborder="0" allowfullscreen></iframe></div>' +
 			'	<div class="widgeticon">' +
 			'		<a href="#" class="fullIcon fancyboxlaunch fancybox.iframe"><i class="fa fa-arrows-alt"></i><span class="hidden"><!--ckeditor needs this span to make the widget work. facepalm.-->&nbsp;</span></a>' +
 			'		<a href="#" class="shareIcon social-btn sb-closed"><i class="fa fa-external-link-square"></i><span class="hidden"><!--ckeditor needs this span to make the widget work. facepalm.-->&nbsp;</span></a>' +
 			'	</div>' +
-			'	<div class="caption_credit"><p><span class="caption">The importance of Operational Peer Reviews</span><span class="credit">@2015 STAIT</span></p></div>' +
+			'	<div class="caption_credit"><p><span class="caption">Caption here.</span><span class="credit">@2016 credit here.</span></p></div>' +
 			'	<div class="socialbtns">' +
-			'		<span class="socialbtnsIcon"><i class="fa fa-facebook"></i><span class="facebook-text">fb text here</span></span>' +
-			'		<span class="socialbtnsIcon"><i class="fa fa-twitter"></i><span class="tweet-text">tweet text here</span></span>' +
+			'		<span class="socialbtnsIcon"><i class="fa fa-facebook"></i><span class="facebook-text">Facebook text here</span></span>' +
+			'		<span class="socialbtnsIcon"><i class="fa fa-twitter"></i><span class="tweet-text">Tweet text here</span></span>' +
 			'	</div>' +
 			'</div>',
 
