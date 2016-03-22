@@ -112,7 +112,7 @@ CKEDITOR.plugins.add('mediabox', {
 			if (editor.contextMenu) {
 				editor.addMenuGroup('mediaboxGroup');
 				editor.addMenuItem('mediaboxItem', {
-					label: 'Edit Mediabox',
+					label: 'Convert to Mediabox',
 					icon: this.path + 'icons/mediabox.png',
 					command: 'mediabox',
 					group: 'mediaboxGroup'
