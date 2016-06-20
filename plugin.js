@@ -52,17 +52,11 @@ CKEDITOR.plugins.add('mediabox', {
 
 			editables: _editables,
 
-			allowedContent: 'div{*}(*);' +
-			'a{*}(*); i{*}[*]' +
-			'a[!fullIcon,!shareIcon]{*}' +
-			'div(!media_widget);' +
+			allowedContent: 'div{*}(*)[*];' +
+			'a{*}(*)[*]; i{*}[*](*)' +
 			'h4(!widget_h4_header);' +
-			'div(!media_embed);' +
-			'div(!widgeticon);' +
-			'div(!caption_credit);' +
-			'div(!socialbtns);' +
-			'span[*]{*}; iframe[!src,frameborder,allowfullscreen];' +
-			'img[*]{*}',
+			'span{*}(*)[*]; iframe{*}(*)[*];' +
+			'img[*]{*}(*)',
 
 			disallowedContent: 'iframe[width,height];',
 
@@ -85,12 +79,13 @@ CKEDITOR.plugins.add('mediabox', {
 			},
 
 			init: function () {
-				this.setData('title', this.parts.title.getText());
-				this.setData('markup', this.parts.markup.getHtml());
-				this.setData('caption', this.parts.caption.getText());
-				this.setData('credit', this.parts.credit.getText());
-				this.setData('tweet', this.parts.tweet.getText());
-				this.setData('facebook', this.parts.facebook.getText());
+				console.log('init called(): this.parts', this.parts);
+				this.setData('title', this.parts.title.getText() || '');
+				this.setData('markup', this.parts.markup.getHtml() || '');
+				this.setData('credit', this.parts.credit.getText() || '');
+				this.setData('caption', this.parts.caption.getText() || '');
+				this.setData('tweet', this.parts.tweet.getText() || '');
+				this.setData('facebook', this.parts.facebook.getText() || '');
 			},
 
 			data: function (widget) {
